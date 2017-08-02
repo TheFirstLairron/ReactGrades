@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ReactGrades.DataServices;
+using ReactGrades.Models;
 
 namespace WebApplicationBasic
 {
@@ -28,8 +30,9 @@ namespace WebApplicationBasic
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddMvc();
+
+            services.AddTransient<CourseAccess, CourseAccess>(provider => new CourseAccess());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

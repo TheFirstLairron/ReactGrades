@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ReactGrades.Models
 {
-    public enum Grade
+    public enum GPA
     {
         A = 4,
         B = 3,
